@@ -1,0 +1,23 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class SumOfTenPositiveIntegers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        int count = 0;
+        while (count < 10) {
+            try {
+                System.out.println("Enter a positive integer:");
+                int number = scanner.nextInt();
+                if (number < 0) {
+                    throw new InputMismatchException("Input positive integer only");
+                }
+                sum += number;
+                count++;
+            } catch (InputMismatchException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        System.out.println("The sum of the 10 positive integers is: " + sum);
+    }
+}
