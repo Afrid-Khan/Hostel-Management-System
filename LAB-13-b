@@ -1,0 +1,23 @@
+
+    import java.util.Scanner;
+import java.util.Random;
+    public class RandomArray {
+        public static void main(String[] args) {
+            // Create an integer array of size 100 and initialize it with random values
+            int[] arr = new int[100];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = (int) (Math.random() * 10000);
+            }
+            // Take an integer from user
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter an integer between 0 and 99: ");
+            int index = scanner.nextInt();
+            // Try to print the corresponding element of the array
+            try {
+                System.out.println("The element at index " + index + " is " + arr[index]);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error: Index out of bounds");
+            }
+        }
+    }
+
